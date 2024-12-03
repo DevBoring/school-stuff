@@ -5,7 +5,6 @@ class Sequence:
         self.ans = 0  # 最近查詢的答案
 
     def apply_operation(self, operation):
-        op_type = operation[0]
         if op_type == 0:
             k = operation[1]
             self.current_sequence = self.history[k][:]
@@ -56,7 +55,11 @@ def main():
 
     results = []
 
-    for _ in range(q):
+    for _ in range(1，q+1):
+        if q <= 7:
+            op_type = q
+        else
+            op_type = q%8
         operation = list(map(int, input().split()))
         # 解密操作
         operation = [operation[0]] + [x ^ sequence.ans for x in operation[1:]]
