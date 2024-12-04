@@ -37,7 +37,7 @@ int main() {
         }
 
         // 輸出結果
-        cout << "Test #" << t << ": " << (isSymmetric ? "Symmetric." : "Non-symmetric.") << endl;
+        cout << "Test #" << t << ": " << (isSymmetric ? "Symmetric." : "Non-symmetric.") << "\n";
     }
 
     return 0;
