@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include <algorithm> // for std::gcd
+#include <algorithm> // for __gcd(a, b)
 using namespace std;
 
 // 計算最小公倍數的函數
