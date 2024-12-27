@@ -40,6 +40,11 @@ def length_of_lis(nums):
     if not nums:
         return 0
     
+    # 使用一個集合來檢查是否所有元素都相同
+    unique_elements = set(nums)
+    if len(unique_elements) == 1:
+        return 1  # 所有元素相同，返回 1
+    
     tails = []
     
     for num in nums:
