@@ -9,38 +9,13 @@
 以下是這個題目的解答：
 
 ```python
-from bisect import bisect_right
-
-def length_of_lis(nums):
-    if not nums:
-        return 0
-    
-    tails = []
-    
-    for num in nums:
-        pos = bisect_right(tails, num)
-        if pos == len(tails):
-            tails.append(num)
-        else:
-            tails[pos] = num
-            
-    return len(tails)
-
-# 測試範例
-print(length_of_lis([10, 9, 2, 5, 3, 7, 101, 18]))  # 輸出: 4
-print(length_of_lis([0, 1, 0, 3, 2, 3]))            # 輸出: 4
-print(length_of_lis([]))                             # 輸出: 0
-print(length_of_lis([7, 7, 7, 7, 7, 7, 7]))         # 輸出: 1
-```
-
-
 import bisect
 
-def length_of_lis(nums):
-    if not nums:
+def length_of_lis(nums): 
+    if not nums: 
         return 0
-    
-    # 使用一個集合來檢查是否所有元素都相同
+
+# 使用一個集合來檢查是否所有元素都相同
     unique_elements = set(nums)
     if len(unique_elements) == 1:
         return 1  # 所有元素相同，返回 1
@@ -60,8 +35,10 @@ def length_of_lis(nums):
             
     return len(tails)
 
-# 測試示例
-print(length_of_lis([10, 9, 2, 5, 3, 7, 101, 18]))  # 輸出: 4
-print(length_of_lis([0, 1, 0, 3, 2, 3]))            # 輸出: 4
-print(length_of_lis([]))                             # 輸出: 0
-print(length_of_lis([7, 7, 7, 7, 7, 7, 7]))         # 輸出: 1
+print(length_of_lis([10, 9, 2, 5, 3, 7, 101, 18])) # 輸出: 4 
+print(length_of_lis([0, 1, 0, 3, 2, 3])) # 輸出: 4 
+print(length_of_lis([])) # 輸出: 0 
+print(length_of_lis([7, 7, 7, 7, 7, 7, 7])) # 輸出: 1
+```
+
+
