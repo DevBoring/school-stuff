@@ -32,3 +32,28 @@ print(length_of_lis([0, 1, 0, 3, 2, 3]))            # 輸出: 4
 print(length_of_lis([]))                             # 輸出: 0
 print(length_of_lis([7, 7, 7, 7, 7, 7, 7]))         # 輸出: 1
 ```
+
+from bisect import bisect_right
+
+def length_of_lis(nums):
+    if not nums:
+        return 0
+    
+    # 使用一個集合來避免重複元素
+    tails = []
+    
+    for num in nums:
+        pos = bisect_right(tails, num)
+        if pos == len(tails):
+            tails.append(num)
+        elif tails[pos] != num:  # 只在 tails 中添加不同的元素
+            tails[pos] = num
+            
+    return len(tails)
+
+# 測試範例
+print(length_of_lis([10, 9, 2, 5, 3, 7, 101, 18]))  # 輸出: 4
+print(length_of_lis([0, 1, 0, 3, 2, 3]))            # 輸出: 4
+print(length_of_lis([]))                             # 輸出: 0
+print(length_of_lis([7, 7, 7, 7, 7, 7, 7]))         # 輸出: 1
+
